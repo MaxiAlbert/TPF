@@ -1,0 +1,14 @@
+﻿#cabecera {
+	background-color:aqua; border-color:black; border-width:10px ; text-align:center; font-family: 'Lucida Sans';font-size:larger
+	
+}
+
+#menu {
+	background-color:lightblue;
+	border-width:3px; border-color:black; border-style:solid;
+	font-family:'Lucida Bright'
+}
+
+body {
+background-color:darkgray
+}

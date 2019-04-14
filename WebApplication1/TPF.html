@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Aerolineas Sale Tarde</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/estilos.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12" id="cabecera">
+				<h1 class="display-4">Bienvenidos a Aerolineas Sale Tarde</h1>
+				<p class="lead">Seleccione alguna de las opciones del menu</p>
+
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+                <div class="col-12" id="menu">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Carga Aeropuerto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Modificar Aeropuerto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Eliminar Aeropuerto</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+				</div>
+            <div class="row">
+				<div class="col-9">
+
+					<form method="get" id="carga">
+						<br />
+						<div class="form-group row">
+							<label for="nombreaer" class="col-4 col-form-label">Nombre Del Aeropuerto</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="nombreaer" placeholder="Nombre">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-4 col-form-label">¿Es Internacional?</label>
+							<div class="col-sm-1">
+								<input class="form-check-input" type="radio" name="internacional" id="si" value="si" checked>
+								<label class="form-check-label" for="si">
+									SI
+								</label>
+
+							</div>
+							<div class="col-sm-1">
+								<input class="form-check-input" type="radio" name="internacional" id="no" value="no">
+								<label class="form-check-label" for="no">
+									NO
+								</label>
+
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="cantidadhan" class="col-4 col-form-label">Cantidad de Hangares Disponibles:</label>
+							<div class="col-sm-2">
+								<input type="number" class="form-control" id="cantidadhan" placeholder="Ingrese la cantidad">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="fechaconse" class="col-4 col-form-label">Fecha Concesion:</label>
+							<div class="col-sm-3">
+								<input type="date" class="form-control" id="fechaconse" placeholder="Seleccione fecha">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="clave" class="col-4 col-form-label">Clave del Aeropuerto</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" id="clave" placeholder="Clave">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="costo" class="col-4 col-form-label">Costo Mensual de Consesion:</label>
+							<div class="col-sm-2">
+								<input type="number" class="form-control" id="costo" placeholder="$">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-4 col-form-label" for="provincia">Provincia</label>
+							<div class="col-3">
+								<select id="provincia" class="form-control">
+									<option selected>Seleccione</option>
+									<option>Cordoba</option>
+									<option>Buenos Aires</option>
+									<option>Santa Fe</option>
+									<option> Mendoza </option>
+								</select>
+							</div>
+						</div>
+					</form>
+					<input type="submit" class="btn btn-primary" name="btnenviar" value="Enviar Datos" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+</body>
+</html>
+
