@@ -16,7 +16,7 @@ miApp.controller("controllerAeropuerto", function ($scope, $http) {
                 fechaconse: $scope.fechaconse,
                 clave: $scope.clave,
                 costo: $scope.costo,
-                provincia: $scope.provincia
+                provincia: $scope.provincia.name
 
             }); //agrego el nuevo pais a la lista de paises
             $scope.name = "";

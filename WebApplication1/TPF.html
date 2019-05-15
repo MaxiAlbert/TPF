@@ -23,9 +23,10 @@
         <div class="container-fluid" ng-show="ABMC == 'A'">
 
             <div class="row">
-                <div class="col-12">
+                <div class="col-2"></div>
+                <div class="col-10">
 
-                    <form name="carga" method="get" id="carga">
+                    <form class="form-horizontal" name="carga" method="get" id="carga">
                         <br />
                         <div class="form-group row">
                             <label for="nombreaer" class="col-4 col-form-label">Nombre Del Aeropuerto</label>
@@ -83,35 +84,36 @@
                         </div>
                     </form>
 
-                    <button class="btn btn-primary" name="btnenviar" ng-click="guardar()" >Enviar Datos</button>
+                    <button class="btn btn-primary" name="btnenviar" ng-click="guardar()">Enviar Datos</button>
                     <button class="btn btn-primary" name="btnverlista" ng-click="ABMC = 'C'" value=""> ver listado </button>
                     <label>{{ABMC}}</label>
                 </div>
+               
             </div>
         </div>
         <div class="container-fluid" ng-show="ABMC == 'C'">
-
-            <table>
-                <thead>
+            <input type="text" class="form-control" ng-model="filtro" name="filtro" placeholder="Filtro" />
+            <table class="table table-bordered table-dark">
+                <thead class="thead-dark">
                     <tr>
-                        <td>Nombre Aeropuerto</td>
-                        <td>internacional</td>
-                        <td>cantidad de hangares</td>
-                        <td>fecha de consesion</td>
-                        <td>clave de Aeropuerto</td>
-                        <td>costo mensual</td>
-                        <td>provincia</td>
+                        <td scope="col">Nombre Aeropuerto</td>
+                        <td scope="col">Internacional</td>
+                        <td scope="col">Cantidad de hangares</tdscope="col">
+                        <td scope="col">Fecha de consesion</td>
+                        <td scope="col">Clave de Aeropuerto</td>
+                        <td scope="col">Costo mensual</td>
+                        <td scope="col">Provincia</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="aero in aeropuertos">
-                        <td>{{aero.name}}</td>
-                        <td>{{pais.internacional}}</td>
-                        <td>{{pais.cantidadhan}}</td>
-                        <td>{{pais.fechaconse}}</td>
-                        <td>{{pais.clave}}</td>
-                        <td>{{pais.costo}}</td>
-                        <td>{{pais.provincia}}</td>
+                    <tr ng-repeat="aero in aeropuertos | filter:filtro as resultado">
+                        <td >{{aero.name}}</td>
+                        <td>{{aero.internacional}}</td>
+                        <td>{{aero.cantidadhan}}</td>
+                        <td>{{aero.fechaconse}}</td>
+                        <td>{{aero.clave}}</td>
+                        <td>{{aero.costo}}</td>
+                        <td>{{aero.provincia}}</td>
 
                     </tr>
                 </tbody>
