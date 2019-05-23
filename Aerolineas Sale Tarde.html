@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html ng-app="miApp">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Aerolineas Sale Tarde</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="javascript/codigo.js"></script>
+    <script src="javascript/jquery-3.4.0.js"></script>
+    <link href="css/estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="controllerAeropuerto" class="container-fluid">
+        <div class="col-12" id="cabecera">
+            <h1 class="display-4">Bienvenidos a Aerolineas Sale Tarde</h1>
+        </div>
+        <div>
+            <form name="carga">
+                <div class="form-group row">
+                    <label for="nombreaer" class="col-sm-2 col-form-label">Nombre Aeropuerto</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="nombreaer" required ng-model="nombreaer" placeholder="Nombre">
+                        <label for="nombreaer" ng-show="carga.nombreaer.$dirty">Ingrese el nombre correctamente</label>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="cantidadhan" class="col-sm-2 col-form-label">Cantidad de Hangares</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" id="cantidadhang" min="0" max="100" ng-model="cantidadhan" placeholder="Cantidad">
+                        <label ng-show="carga.cantidadhan.$invalid && carga.cantidadhan.$dirty">Ingrese una cantidad entre 0 y 100 correctamente</label>
+                    </div>
+                </div>
+
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Es Internacional?</legend>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="internacionalsi" ng-model="internacional" id="RadioSI" value="si" checked>
+                                <label class="form-check-label" for="internacionalsi">
+                                    SI
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="internacionalno" ng-model="internacional" id="RadioNO" value="no">
+                                <label class="form-check-label" for="internacionalsi">
+                                    NO
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="fechacon" class="col-sm-2 col-form-label">Fecha Consesion</label>
+                    <div class="col-sm-2">
+                        <input type="date" ng-required="comprobar()" class="form-control" id="fechacons" ng-model="fechaconse" placeholder="Fecha">
+                        <label ng-show="carga.fechaconse.$invalid && carga.fechaconse.$dirty">La fecha debe ser posterior a la fecha actual</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="clave" class="col-sm-2 col-form-label">Nombre Clave</label>
+                    <div class="col-sm-2">
+                        <input type="text" required class="form-control" id="clave" ng-model="clave" placeholder="Clave">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="clave" class="col-sm-2 col-form-label">Costo Mensual</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" id="costo" min="0" max="10000000" ng-model="costo" placeholder="$">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="provincia">Provincia</label>
+                    <div class="col-sm-3">
+                        <select id="provincia" class="form-control" ng-model="provincia" ng-options="prov.name for prov in provincias"></select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button class="btn btn-primary" name="btnenviar" ng-click="guardar()">Enviar Datos</button>
+                        <button class="btn btn-primary" name="btnverlista" ng-click="ABMC = 'C'" value=""> Ver Listado </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+        </div>
+    
+
+</body>
+</html>
